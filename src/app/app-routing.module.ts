@@ -22,11 +22,11 @@ const routes: Routes = [
     path: 'createEmp',
     component: CreateEmpComponent,
   },
-  {
-    path: '',
-    redirectTo: '/login',
-    pathMatch: 'full',
-  },
+  // {
+  //   path: '',
+  //   redirectTo: '/login',
+  //   pathMatch: 'full',
+  // },
 ];
 
 @NgModule({
