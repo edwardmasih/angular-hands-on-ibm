@@ -33,9 +33,4 @@ export class LoginService {
       .post(this.apiServer, user)
       .pipe(catchError(this.errorhandler));
   }
-  deleteUser(id: number): Observable<any> {
-    return this.httpClient
-      .delete(this.apiServer + `/${id}`)
-      .pipe(catchError(this.errorhandler));
-  }
 }

@@ -8,6 +8,10 @@
     }
   ],
   "userLogins": [
-    
+    {
+      "email": "edwar",
+      "loginTime": "2022-08-11T09:17:58.269Z",
+      "id": 1
+    }
   ]
 }
