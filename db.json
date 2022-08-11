@@ -2,21 +2,11 @@
   "employees": [
     {
       "id": 1,
-      "first_name": "parshad",
-      "last_name": "MCA",
+      "first_name": "Edward",
+      "last_name": "Masih",
+      "email": "edward.masih",
       "phone": "9993562067"
     }
   ],
-  "userLogins": [
-    {
-      "email": "edwar",
-      "loginTime": "2022-08-11T09:17:58.269Z",
-      "id": 1
-    },
-    {
-      "email": "test",
-      "loginTime": "2022-08-11T09:25:55.481Z",
-      "id": 2
-    }
-  ]
+  "userLogins": []
 }
