@@ -1,38 +1,40 @@
-<div class="container login">
-  <h3>Login</h3>
+<div class="main">
+  <div class="login">
+    <h3>Login</h3>
 
-  <form [formGroup]="LoginForm" (ngSubmit)="userLogin(LoginForm)">
-    <!-- Email input -->
-    <div class="form-outline mb-4">
-      <input
-        type="email"
-        id="loginName"
-        formControlName="email"
-        class="form-control"
-        placeholder="Enter Email"
-      />
-      <label class="form-label" for="loginName">Email</label>
-    </div>
+    <form [formGroup]="LoginForm" (ngSubmit)="userLogin(LoginForm)">
+      <!-- Email input -->
+      <div class="form-outline mb-4">
+        <input
+          type="email"
+          id="loginName"
+          formControlName="email"
+          class="form-control"
+          placeholder="Enter Email"
+        />
+        <label class="form-label" for="loginName">Email</label>
+      </div>
 
-    <!-- Password input -->
-    <div class="form-outline mb-4">
-      <input
-        formControlName="password"
-        type="password"
-        id="loginPassword"
-        class="form-control"
-        placeholder="Enter Password"
-      />
-      <label class="form-label" for="loginPassword">Password</label>
-    </div>
+      <!-- Password input -->
+      <div class="form-outline mb-4">
+        <input
+          formControlName="password"
+          type="password"
+          id="loginPassword"
+          class="form-control"
+          placeholder="Enter Password"
+        />
+        <label class="form-label" for="loginPassword">Password</label>
+      </div>
 
-    <button type="submit" class="btn btn-primary btn-block mb-4">
-      Sign In
-    </button>
+      <button type="submit" class="btn btn-primary btn-block mb-4">
+        Sign In
+      </button>
 
-    <!-- Register buttons -->
-    <div class="text-center">
-      <p>New User? <a routerLink="/signup">Register</a></p>
-    </div>
-  </form>
+      <!-- Register buttons -->
+      <div class="text-center">
+        <p>New User? <a routerLink="/signup">Register</a></p>
+      </div>
+    </form>
+  </div>
 </div>
