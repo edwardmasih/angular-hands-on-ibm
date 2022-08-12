@@ -55,4 +55,7 @@ export class CreateEmpComponent implements OnInit {
       this.employeeForm.get('email')?.setValue('');
     });
   }
+  logout() {
+    sessionStorage.clear();
+  }
 }

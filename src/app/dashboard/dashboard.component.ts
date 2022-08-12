@@ -44,4 +44,8 @@ export class DashboardComponent implements OnInit {
       // console.log(this.productListChunks);
     });
   }
+
+  logout() {
+    sessionStorage.clear();
+  }
 }

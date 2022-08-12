@@ -1,8 +1,9 @@
 <div class="d-flex flex-column align-items-end">
   <span>User - {{ user }}</span>
-  <span class="mt-3"
-    ><button routerLink="/createEmp" class="btn btn-success">
-      Create Emp
+  <span class="mt-3 mb-3"
+    ><button routerLink="/createEmp" class="btn btn-success">Create Emp</button> &nbsp;
+    <button routerLink="/login" class="btn btn-success" (click)="logout()">
+      Logout
     </button></span
   >
 </div>
@@ -11,12 +12,10 @@
 <div *ngIf="productList.length > 0" class="">
   <!-- Got response -->
   <!-- {{ productList | json }} -->
-  
 
-  <mat-grid-list cols="2" >
+  <mat-grid-list cols="2">
     <mat-grid-tile *ngFor="let item of productList">
       <app-card [item]="item"></app-card>
     </mat-grid-tile>
   </mat-grid-list>
-
 </div>
