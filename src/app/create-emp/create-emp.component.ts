@@ -1,7 +1,14 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import {
+  AbstractControl,
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 import { EmployeeService } from './create-emp.service';
 import { Employee } from './employee';
+import { firstNameValidation } from './customValidator';
 
 @Component({
   selector: 'app-create-emp',
@@ -10,32 +17,42 @@ import { Employee } from './employee';
 })
 export class CreateEmpComponent implements OnInit {
   employees: Employee[] = [];
+  employeeForm!: FormGroup;
 
   // @ViewChild('traineeID', { static: true }) traineeID!: ElementRef;
 
-  constructor(private empService: EmployeeService) {}
+  constructor(private empService: EmployeeService, private fb: FormBuilder) {}
 
   async ngOnInit() {
+    this.getData();
+    this.employeeForm = this.fb.group(
+      {
+        first_name: ['', Validators.required],
+        last_name: [''],
+        email: ['', Validators.required],
+        phone: ['', Validators.required],
+      },
+      // { validator: firstNameValidation }
+      // Custom Validator !!
+    );
+  }
+
+  getData = async () => {
     await this.empService.getAll().subscribe((data: Employee[]) => {
       this.employees = data;
       console.log(this.employees);
     });
-  }
+  };
 
-  traineeForm = new FormGroup({
-    name: new FormControl(),
-    degree: new FormControl(),
-  });
-
-  async addTrainee(trainee: any) {
-    console.log(trainee.value);
-    let newTrainee = { id: this.employees.length, ...trainee.value };
-    console.log(newTrainee);
-    await this.empService.createEmployee(newTrainee).subscribe((data: any) => {
+  async addEmployee(emp: any) {
+    console.log(emp);
+    await this.empService.createEmployee(emp.value).subscribe((data: any) => {
       console.log(data);
-      this.ngOnInit();
-      this.traineeForm.controls.name.setValue('');
-      this.traineeForm.controls.degree.setValue('');
+      this.getData();
+      this.employeeForm.get('first_name')?.setValue('');
+      this.employeeForm.get('last_name')?.setValue('');
+      this.employeeForm.get('phone')?.setValue('');
+      this.employeeForm.get('email')?.setValue('');
     });
   }
 }

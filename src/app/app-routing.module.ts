@@ -14,6 +14,7 @@ const routes: Routes = [
   {
     path: 'signup',
     component: SignupComponent,
+    // loadChildren: () => import('./modulea/modulea.module').then(m => m.ModuleaModule) 
   },
   {
     path: 'dashboard',
