@@ -27,21 +27,21 @@ export class DashboardComponent implements OnInit {
       console.log(data);
       this.productList = data;
 
-      this.productListChunks = this.productList.reduce(
-        (resultArray: any, item, index) => {
-          const chunkIndex = Math.floor(index / perChunk);
+      // this.productListChunks = this.productList.reduce(
+      //   (resultArray: any, item, index) => {
+      //     const chunkIndex = Math.floor(index / perChunk);
 
-          if (!resultArray[chunkIndex]) {
-            resultArray[chunkIndex] = []; // start a new chunk
-          }
+      //     if (!resultArray[chunkIndex]) {
+      //       resultArray[chunkIndex] = []; // start a new chunk
+      //     }
 
-          resultArray[chunkIndex].push(item);
+      //     resultArray[chunkIndex].push(item);
 
-          return resultArray;
-        },
-        []
-      );
-      console.log(this.productListChunks);
+      //     return resultArray;
+      //   },
+      //   []
+      // );
+      // console.log(this.productListChunks);
     });
   }
 }

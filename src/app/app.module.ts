@@ -9,7 +9,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { CreateEmpComponent } from './create-emp/create-emp.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-
+import { MatGridListModule } from '@angular/material/grid-list';
+import { CardComponent } from './dashboard/card/card.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,6 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
     SignupComponent,
     DashboardComponent,
     CreateEmpComponent,
+    CardComponent,
   ],
   imports: [
     BrowserModule,
@@ -24,6 +26,7 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    MatGridListModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

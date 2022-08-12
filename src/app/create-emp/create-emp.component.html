@@ -1,72 +1,79 @@
 <div class="container mt-5">
-  <form [formGroup]="employeeForm" (ngSubmit)="addEmployee(employeeForm)">
-    <label class="form-label" for="first_name">First Name</label>
-    <div class="form-outline mb-2">
-      <input
-        type="text"
-        id="first_name"
-        formControlName="first_name"
-        class="form-control"
-        placeholder="Enter First Name"
-      />
-    </div>
-    <div class="form-outline mb-2">
-      <label class="form-label" for="last_name">Last Name</label>
-      <input
-        type="text"
-        id="last_name"
-        formControlName="last_name"
-        class="form-control"
-        placeholder="Enter Last Name"
-      />
-    </div>
-    <div class="form-outline mb-2">
-      <label class="form-label" for="loginName">Email</label>
-      <input
-        type="email"
-        id="loginName"
-        formControlName="email"
-        class="form-control"
-        placeholder="Enter Email"
-      />
-    </div>
-
-    <div class="form-outline mb-2">
-      <label class="form-label" for="phone">Phone Number</label>
-      <input
-        formControlName="phone"
-        type="tel"
-        id="phone"
-        class="form-control"
-        placeholder="Enter Phone Number"
-      />
-    </div>
-    <button
-      type="submit"
-      [disabled]="employeeForm.status=='INVALID'"
-      class="btn btn-primary btn-block mb-2"
-    >
-      Add Employee
+  <nav style="display: flex; flex-direction: row-reverse">
+    <button routerLink="/dashboard" class="mb-3 btn btn-primary">
+      Dashboard
     </button>
-  </form>
-  <br />
+  </nav>
+  <div>
+    <form [formGroup]="employeeForm" (ngSubmit)="addEmployee(employeeForm)">
+      <label class="form-label" for="first_name">First Name</label>
+      <div class="form-outline mb-2">
+        <input
+          type="text"
+          id="first_name"
+          formControlName="first_name"
+          class="form-control"
+          placeholder="Enter First Name"
+        />
+      </div>
+      <div class="form-outline mb-2">
+        <label class="form-label" for="last_name">Last Name</label>
+        <input
+          type="text"
+          id="last_name"
+          formControlName="last_name"
+          class="form-control"
+          placeholder="Enter Last Name"
+        />
+      </div>
+      <div class="form-outline mb-2">
+        <label class="form-label" for="loginName">Email</label>
+        <input
+          type="email"
+          id="loginName"
+          formControlName="email"
+          class="form-control"
+          placeholder="Enter Email"
+        />
+      </div>
 
-  <table class="table table-hover">
-    <thead class="thead-dark">
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Name</th>
-        <th scope="col">Email</th>
-        <th scope="col">Phone</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let person of employees">
-        <th scope="row">{{ person?.id }}</th>
-        <td>{{ person?.first_name + " " + person?.last_name }}</td>
-        <td>{{ person?.email }}</td>
-        <td>{{ person?.phone }}</td>
-      </tr>
-    </tbody>
-  </table>
+      <div class="form-outline mb-2">
+        <label class="form-label" for="phone">Phone Number</label>
+        <input
+          formControlName="phone"
+          type="tel"
+          id="phone"
+          class="form-control"
+          placeholder="Enter Phone Number"
+        />
+      </div>
+      <button
+        type="submit"
+        [disabled]="employeeForm.status == 'INVALID'"
+        class="btn btn-primary btn-block mb-2"
+      >
+        Add Employee
+      </button>
+    </form>
+    <br />
+
+    <table class="table table-hover">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Phone</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let person of employees">
+          <th scope="row">{{ person?.id }}</th>
+          <td>{{ person?.first_name + " " + person?.last_name }}</td>
+          <td>{{ person?.email }}</td>
+          <td>{{ person?.phone }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
