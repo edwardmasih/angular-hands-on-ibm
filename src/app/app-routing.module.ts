@@ -14,7 +14,7 @@ const routes: Routes = [
   {
     path: 'signup',
     component: SignupComponent,
-    // loadChildren: () => import('./modulea/modulea.module').then(m => m.ModuleaModule) 
+    // loadChildren: () => import('./modulea/modulea.module').then(m => m.ModuleaModule)
   },
   {
     path: 'dashboard',
@@ -26,11 +26,12 @@ const routes: Routes = [
     component: CreateEmpComponent,
     canActivate: [AuthGuard],
   },
-  // {
-  //   path: '',
-  //   redirectTo: '/login',
-  //   pathMatch: 'full',
-  // },
+  {
+    path: '',
+    redirectTo: '/login',
+    pathMatch: 'full',
+  },
+  { path: '**', redirectTo: '/login' },
 ];
 
 @NgModule({
